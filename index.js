@@ -12,9 +12,16 @@ const state = {
   todos: getTodos(),
   currentFilter: "All",
 };
+const render = () => {
+  window.requestAnimationFrame(() => {
+    const main = document.querySelector(".todoapp");
+    const newMain = registry.renderRoot(main, state);
+    main.replaceWith(newMain);
+  });
+};
 
-window.requestAnimationFrame(() => {
-  const main = document.querySelector(".todoapp");
-  const newMain = registry.renderRoot(main, state);
-  main.replaceWith(newMain);
-});
+window.setInterval(() => {
+  state.todos = getTodos();
+  render();
+}, 5000);
+render();
