@@ -1,5 +1,4 @@
 import todosView from "./todos.js";
-
 import counterView from "./counter.js";
 import filtersView from "./filters.js";
 
