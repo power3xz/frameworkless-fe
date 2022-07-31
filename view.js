@@ -4,7 +4,7 @@ import filtersView from "./filters.js";
 
 export default (targetElement, state) => {
   const element = targetElement.cloneNode(true);
-  const list = element.querySelector("todo-list");
+  const list = element.querySelector(".todo-list");
   const counter = element.querySelector(".todo-count");
   const filters = element.querySelector(".filters");
 
