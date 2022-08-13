@@ -86,7 +86,7 @@ const applyDiff = (parentNode, realNode, virtualNode) => {
 const render = () => {
   window.requestAnimationFrame(() => {
     const main = document.getElementById("root");
-    const newMain = registry.renderRoot(main[0], state, events);
+    const newMain = registry.renderRoot(main, state, events);
     applyDiff(document.body, main, newMain);
   });
 };
