@@ -15,6 +15,20 @@ const state = {
   currentFilter: "All",
 };
 
+const events = {
+  deleteItem: (index) => {
+    state.todos.splice(index, 1);
+    render();
+  },
+  addItem: (text) => {
+    state.todos.push({
+      text,
+      completed: false,
+    });
+    render();
+  },
+};
+
 const isNodeChanged = (node1, node2) => {
   const n1Attributes = node1.attributes;
   const n2Attributes = node2.attributes;
@@ -72,7 +86,7 @@ const applyDiff = (parentNode, realNode, virtualNode) => {
 const render = () => {
   window.requestAnimationFrame(() => {
     const main = document.getElementById("root");
-    const newMain = registry.renderRoot(main, state);
+    const newMain = registry.renderRoot(main, state, events);
     applyDiff(document.body, main, newMain);
   });
 };
