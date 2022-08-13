@@ -4,6 +4,11 @@ import todosView from "./view/todos.js";
 import counterView from "./view/counter.js";
 import filtersView from "./view/filters.js";
 import registry from "./registry.js";
+import App from "./components/todomvc-app.js";
+import List from "./components/todomvc-list.js";
+
+window.customElements.define("todomvc-app", App);
+window.customElements.define("todomvc-list", List);
 
 registry.add("todos", todosView);
 registry.add("filters", filtersView);
