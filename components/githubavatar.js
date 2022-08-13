@@ -3,6 +3,11 @@ const LOADING_IMAGE = "https://files-8bga2nn0.now.sh";
 const AVATAR_LOAD_COMPLETE = "AVATAR_LOAD_COMPLETE";
 const AVATAR_LOAD_ERROR = "AVATAR_LOAD_ERROR";
 
+export const EVENTS = {
+  AVATAR_LOAD_COMPLETE,
+  AVATAR_LOAD_ERROR,
+};
+
 const getGitHubAvatarUrl = async (user) => {
   if (!user) {
     return;
