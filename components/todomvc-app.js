@@ -11,7 +11,7 @@ export default class App extends HTMLElement {
   }
 
   deleteItem(index) {
-    this.sate.todos.splice(index, 1);
+    this.state.todos.splice(index, 1);
     this.syncAttributes();
   }
 
