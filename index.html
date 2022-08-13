@@ -37,9 +37,11 @@
         <section class="main">
           <input id="toggle-all" class="toggle-all" type="checkbox" />
           <label for="toggle-all">Mark all as complete</label>
-          <ul class="todo-list" data-component="todos"></ul>
+          <todomvc-list></todomvc-list>
+          <!-- <ul class="todo-list" data-component="todos"></ul> -->
         </section>
-        <footer class="footer">
+        <todomvc-footer></todomvc-footer>
+        <!-- <footer class="footer">
           <span class="todo-count" data-component="counter">1 Item Left</span>
           <ul class="filters" data-component="filters">
             <li>
@@ -53,20 +55,13 @@
             </li>
           </ul>
           <button class="clear-completed">Clear completed</button>
-        </footer>
+        </footer> -->
       </section>
     </template>
-    <div id="root">
+    <todomvc-app></todomvc-app>
+    <!-- <div id="root">
       <div data-component="app"></div>
-    </div>
-    <footer class="info">
-      <p>Double-click to edit a todo</p>
-      <p>
-        Created by
-        <a href="http://twitter.com/thestrazz86">Francesco Strazzullo</a>
-      </p>
-      <p>Thanks to <a href="http://todomvc.com">TodoMVC</a></p>
-    </footer>
+    </div> -->
     <script type="module" src="index.js"></script>
   </body>
 </html>
