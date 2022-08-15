@@ -1,12 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const uuidv4 = require("uuid");
+const { v4: uuidv4 } = require("uuid");
+
 const { findIndex } = require("lodash");
+const cors = require("cors");
 
 const PORT = 8080;
 const app = express();
 let todos = [];
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/api/todos", (req, res) => {
@@ -24,7 +27,7 @@ app.post("/api/todos", (req, res) => {
   res.send(newTodo);
 });
 
-app.patch("/api/todos", (req, res) => {
+app.patch("/api/todos/:id", (req, res) => {
   const updateIndex = findIndex(todos, (t) => t.id === req.params.id);
   const oldTodo = todos[updateIndex];
   const newTodo = {

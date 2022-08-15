@@ -21,6 +21,7 @@ const parseResponse = (xhr) => {
 
 const request = (params) => {
   return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
     const { method = "GET", url, headers = {}, body } = params;
     xhr.open(method, url);
     setHeaders(xhr, headers);

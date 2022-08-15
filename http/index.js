@@ -6,7 +6,7 @@ const printResult = (action, result) => {
   const node = document.createElement("p");
   node.textContent = `${action.toUpperCase()}: ${JSON.stringify(
     result
-  )}} (${time})`;
+  )} (${time})`;
   document.querySelector("div").appendChild(node);
 };
 

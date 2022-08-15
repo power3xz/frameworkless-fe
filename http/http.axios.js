@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 const request = async (params) => {
   const { method = "GET", url, headers = {}, body } = params;
