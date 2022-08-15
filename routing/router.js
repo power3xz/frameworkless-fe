@@ -33,5 +33,9 @@ export default () => {
     }
     checkRoutes();
   };
+
+  router.navigate = (fragment) => {
+    window.location.hash = fragment;
+  };
   return router;
 };
