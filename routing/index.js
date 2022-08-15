@@ -1,4 +1,4 @@
-import createRouter from "./index.js";
+import createRouter from "./router.js";
 import createPages from "./pages.js";
 
 const container = document.querySelector("main");
@@ -10,5 +10,5 @@ const router = createRouter();
 router
   .addRoute("#/", pages.home)
   .addRoute("#/list", pages.list)
-  .addRoute(pages.notFound)
+  .setNotFound(pages.notFound)
   .start();
