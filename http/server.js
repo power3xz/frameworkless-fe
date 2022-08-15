@@ -35,6 +35,7 @@ app.patch("/api/todos/:id", (req, res) => {
     ...req.body,
   };
   todos[updateIndex] = newTodo;
+
   res.send(newTodo);
 });
 
